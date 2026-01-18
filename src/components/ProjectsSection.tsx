@@ -63,7 +63,7 @@ const ProjectsSection = () => {
           <RevealOnScroll>
             <div className="accent-line mb-6" />
             <span className="text-label mb-4 block">Our work</span>
-            <h2 className="heading-section mb-6">
+            <h2 className="heading-section mb-6 text-[#EEE8DD]">
               Projects that solve
               <br />
               real problems.
@@ -87,13 +87,13 @@ const ProjectsSection = () => {
                   <div className="flex items-start gap-4 mb-6">
                     {/* Logo - First Letter or custom N for Note Netra */}
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-white/10 to-transparent border border-white/10 flex items-center justify-center shrink-0">
-                      <span className="font-sans font-bold text-xl text-white">
+                      <span className="font-sans font-bold text-xl text-[#EEE8DD]">
                         {project.title === 'Note Netra Core' ? 'N' : project.title[0]}
                       </span>
                     </div>
 
                     <div className="flex flex-col">
-                      <h3 className="font-bold text-white text-2xl tracking-tight leading-none mb-1">
+                      <h3 className="font-bold text-[#EEE8DD] text-2xl tracking-tight leading-none mb-1">
                         {project.title === 'Note Netra Core' ? (
                           <a href="https://www.notenetra.in/" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="hover:text-primary transition-colors">
                             {project.title}
@@ -109,7 +109,7 @@ const ProjectsSection = () => {
                   </div>
 
                   {/* Body */}
-                  <p className="text-white/70 text-base leading-relaxed mb-8">
+                  <p className="text-white/60 text-base leading-relaxed mb-8">
                     {project.description}
                   </p>
 
@@ -118,7 +118,7 @@ const ProjectsSection = () => {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-4 py-1.5 text-xs font-medium text-white/80 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors"
+                        className="px-4 py-1.5 text-xs font-medium text-white/60 bg-white/5 border border-white/10 rounded-full hover:bg-white/10 transition-colors"
                       >
                         {tag}
                       </span>
