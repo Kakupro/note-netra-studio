@@ -31,9 +31,7 @@ const Index = () => {
       <main className="relative z-10 w-full overflow-hidden">
         <HeroSection />
         <AboutSection />
-        <GlowSeparator />
         <FoundersSection />
-        <GlowSeparator />
         <ProjectsSection />
       </main>
       <Footer />
