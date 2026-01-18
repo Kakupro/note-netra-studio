@@ -30,7 +30,6 @@ const Index = () => {
       <Navbar />
       <main className="relative z-10 w-full overflow-hidden">
         <HeroSection />
-        <ScrollIndicator />
         <AboutSection />
         <GlowSeparator />
         <FoundersSection />
