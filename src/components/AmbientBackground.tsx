@@ -25,10 +25,10 @@ const AmbientBackground = () => {
             <div className="absolute -top-[50%] -left-[50%] w-[100vw] h-[200vh] bg-gradient-to-r from-transparent via-[#EEE8DD]/[0.03] to-transparent blur-[100px] animate-travel-light pointer-events-none" />
 
             {/* Shooting Stars (Subtle, Intermittent) */}
-            <div className="absolute top-[10%] left-[5%] h-px w-[100px] bg-gradient-to-r from-transparent via-[#EEE8DD]/40 to-transparent animate-shoot pointer-events-none" style={{ animationDelay: '0s', animationDuration: '10s' }} />
-            <div className="absolute top-[35%] left-[65%] h-px w-[140px] bg-gradient-to-r from-transparent via-[#EEE8DD]/30 to-transparent animate-shoot pointer-events-none" style={{ animationDelay: '4s', animationDuration: '14s' }} />
-            <div className="absolute top-[75%] left-[25%] h-px w-[120px] bg-gradient-to-r from-transparent via-[#EEE8DD]/30 to-transparent animate-shoot pointer-events-none" style={{ animationDelay: '7s', animationDuration: '12s' }} />
-            <div className="absolute top-[15%] left-[85%] h-px w-[110px] bg-gradient-to-r from-transparent via-[#EEE8DD]/40 to-transparent animate-shoot pointer-events-none" style={{ animationDelay: '2s', animationDuration: '17s' }} />
+            <div className="absolute top-[10%] left-[5%] h-[2px] w-[100px] bg-gradient-to-r from-transparent via-[#EEE8DD] to-transparent animate-shoot pointer-events-none" style={{ animationDelay: '0s', animationDuration: '10s' }} />
+            <div className="absolute top-[35%] left-[65%] h-[2px] w-[140px] bg-gradient-to-r from-transparent via-[#EEE8DD] to-transparent animate-shoot pointer-events-none" style={{ animationDelay: '4s', animationDuration: '14s' }} />
+            <div className="absolute top-[75%] left-[25%] h-[2px] w-[120px] bg-gradient-to-r from-transparent via-[#EEE8DD] to-transparent animate-shoot pointer-events-none" style={{ animationDelay: '7s', animationDuration: '12s' }} />
+            <div className="absolute top-[15%] left-[85%] h-[2px] w-[110px] bg-gradient-to-r from-transparent via-[#EEE8DD] to-transparent animate-shoot pointer-events-none" style={{ animationDelay: '2s', animationDuration: '17s' }} />
         </div>
     );
 };
