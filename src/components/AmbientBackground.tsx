@@ -9,14 +9,14 @@ const AmbientBackground = () => {
                 }}
             />
 
-            {/* Primary Drift - Faint Gold/Warm Grey */}
-            <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] rounded-[100%] bg-accent/5 blur-[120px] animate-drift mix-blend-screen opacity-40" />
+            {/* Primary Drift - Warm Ivory */}
+            <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] rounded-[100%] bg-[#F5F1E8]/5 blur-[120px] animate-drift mix-blend-screen opacity-100" />
 
-            {/* Secondary Drift - Muted Cool Grey */}
-            <div className="absolute bottom-[-20%] right-[-10%] w-[70%] h-[70%] rounded-[100%] bg-secondary/20 blur-[130px] animate-drift animation-delay-2000 mix-blend-screen opacity-30" />
+            {/* Secondary Drift - Sand/Champagne */}
+            <div className="absolute bottom-[-20%] right-[-10%] w-[70%] h-[70%] rounded-[100%] bg-[#E6DECF]/5 blur-[130px] animate-drift animation-delay-2000 mix-blend-screen opacity-100" />
 
-            {/* Deep Center Depth - Very subtle */}
-            <div className="absolute top-[30%] left-[20%] w-[50%] h-[50%] rounded-[100%] bg-white/1 blur-[150px] animate-drift animation-delay-4000 mix-blend-screen opacity-20" />
+            {/* Deep Center Depth - Beige Text Match */}
+            <div className="absolute top-[30%] left-[20%] w-[50%] h-[50%] rounded-[100%] bg-[#EEE8DD]/2 blur-[150px] animate-drift animation-delay-4000 mix-blend-screen opacity-100" />
 
             {/* Radial Vignette to focus center */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/50 to-[#050505]" />
