@@ -166,6 +166,31 @@
     @apply h-px w-12;
     background: hsl(var(--primary));
   }
+
+  /* Traveling Light Animation */
+  @keyframes travel-diagonal {
+    0% {
+      transform: translate(-100%, -100%) rotate(45deg);
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 0.04;
+    }
+
+    90% {
+      opacity: 0.04;
+    }
+
+    100% {
+      transform: translate(100vw, 100vh) rotate(45deg);
+      opacity: 0;
+    }
+  }
+
+  .animate-travel-light {
+    animation: travel-diagonal 20s linear infinite;
+  }
 }
 
 @layer components {

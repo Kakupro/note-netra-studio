@@ -18,6 +18,9 @@ const AmbientBackground = () => {
             {/* Deep Center Depth - Beige Text Match */}
             <div className="absolute top-[30%] left-[20%] w-[50%] h-[50%] rounded-[100%] bg-[#EEE8DD]/2 blur-[150px] animate-drift animation-delay-4000 mix-blend-screen opacity-100" />
 
+            {/* Traveling Light Animation - Diagonal Beam */}
+            <div className="absolute -top-[50%] -left-[50%] w-[100vw] h-[200vh] bg-gradient-to-r from-transparent via-[#EEE8DD]/[0.03] to-transparent blur-[100px] animate-travel-light pointer-events-none" />
+
             {/* Radial Vignette to focus center */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/50 to-[#050505]" />
         </div>
