@@ -68,15 +68,20 @@ const ProjectsSection = () => {
               >
                 {/* Header */}
                 <div className="flex items-start justify-between mb-4">
-                  <h3 className="font-semibold text-foreground text-lg group-hover:text-primary transition-colors duration-200">
-                    {project.title === 'Note Netra Core' ? (
-                      <a href="https://www.notenetra.in/" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
-                        {project.title}
-                      </a>
-                    ) : (
-                      project.title
+                  <div>
+                    <h3 className="font-semibold text-foreground text-lg group-hover:text-primary transition-colors duration-200">
+                      {project.title === 'Note Netra Core' ? (
+                        <a href="https://www.notenetra.in/" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}>
+                          {project.title}
+                        </a>
+                      ) : (
+                        project.title
+                      )}
+                    </h3>
+                    {project.title === 'Note Netra Core' && (
+                      <p className="text-xs text-primary font-mono mt-1">Subsidiary of Kenet</p>
                     )}
-                  </h3>
+                  </div>
                   <span
                     className={`px-2 py-1 text-xs rounded-full font-mono ${statusColors[project.status]}`}
                   >
