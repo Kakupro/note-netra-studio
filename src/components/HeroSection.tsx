@@ -1,3 +1,5 @@
+import RevealOnScroll from "./RevealOnScroll";
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -26,52 +28,50 @@ const HeroSection = () => {
       <div className="container-main relative z-10 pt-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Label */}
-          <div
-            className="inline-flex items-center gap-2 mb-8 animate-fade-up"
-            style={{ animationDelay: '0.1s' }}
-          >
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-label">Building the future, methodically</span>
-          </div>
+          <RevealOnScroll delay={100}>
+            <div
+              className="inline-flex items-center gap-2 mb-8"
+            >
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-label">Building the future, methodically</span>
+            </div>
+          </RevealOnScroll>
 
           {/* Main heading */}
-          <h1
-            className="heading-hero mb-6 animate-fade-up"
-            style={{ animationDelay: '0.2s' }}
-          >
-            Technology that{' '}
-            <span className="text-gradient-primary">works</span>
-            <br />
-            for real problems
-          </h1>
+          <RevealOnScroll delay={200}>
+            <h1 className="heading-hero mb-6">
+              Technology that{' '}
+              <span className="text-gradient-primary">works</span>
+              <br />
+              for real problems
+            </h1>
+          </RevealOnScroll>
 
           {/* Subtext */}
-          <p
-            className="text-body max-w-2xl mx-auto mb-12 animate-fade-up"
-            style={{ animationDelay: '0.3s' }}
-          >
-            We build intelligent systems and automation tools that solve genuine
-            challenges. No hype. No buzzwords. Just engineering that delivers.
-          </p>
+          <RevealOnScroll delay={300}>
+            <p className="text-body max-w-2xl mx-auto mb-12">
+              We build intelligent systems and automation tools that solve genuine
+              challenges. No hype. No buzzwords. Just engineering that delivers.
+            </p>
+          </RevealOnScroll>
 
           {/* CTA */}
-          <div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up"
-            style={{ animationDelay: '0.4s' }}
-          >
-            <a
-              href="#projects"
-              className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium text-sm hover:bg-primary/90 transition-all duration-200 shadow-depth"
-            >
-              View our work
-            </a>
-            <a
-              href="#about"
-              className="px-8 py-3 border border-border text-foreground rounded-lg font-medium text-sm hover:bg-muted/50 transition-all duration-200"
-            >
-              Learn more
-            </a>
-          </div>
+          <RevealOnScroll delay={400}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a
+                href="#projects"
+                className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium text-sm hover:bg-primary/90 transition-all duration-200 shadow-depth"
+              >
+                View our work
+              </a>
+              <a
+                href="#about"
+                className="px-8 py-3 border border-border text-foreground rounded-lg font-medium text-sm hover:bg-muted/50 transition-all duration-200"
+              >
+                Learn more
+              </a>
+            </div>
+          </RevealOnScroll>
         </div>
 
         {/* Scroll indicator */}

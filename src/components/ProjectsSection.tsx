@@ -36,79 +36,84 @@ const statusColors: Record<string, string> = {
   Internal: 'bg-secondary text-secondary-foreground',
 };
 
+import RevealOnScroll from "./RevealOnScroll";
+
 const ProjectsSection = () => {
   return (
     <section id="projects" className="section-padding">
       <div className="container-main">
         {/* Section header */}
         <div className="max-w-3xl mb-16">
-          <div className="accent-line mb-6" />
-          <span className="text-label mb-4 block">Our work</span>
-          <h2 className="heading-section mb-6">
-            Projects that solve
-            <br />
-            real problems.
-          </h2>
-          <p className="text-body">
-            We focus on building tools and systems that address genuine needs,
-            not hypothetical ones.
-          </p>
+          <RevealOnScroll>
+            <div className="accent-line mb-6" />
+            <span className="text-label mb-4 block">Our work</span>
+            <h2 className="heading-section mb-6">
+              Projects that solve
+              <br />
+              real problems.
+            </h2>
+            <p className="text-body">
+              We focus on building tools and systems that address genuine needs,
+              not hypothetical ones.
+            </p>
+          </RevealOnScroll>
         </div>
 
         {/* Projects grid */}
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {projects.map((project, index) => (
-            <div
-              key={project.title}
-              className="card-3d surface-elevated glow-subtle rounded-xl p-8 lg:p-10 group cursor-pointer"
-            >
-              {/* Header */}
-              <div className="flex items-start justify-between mb-4">
-                <h3 className="font-semibold text-foreground text-lg group-hover:text-primary transition-colors duration-200">
-                  {project.title}
-                </h3>
-                <span
-                  className={`px-2 py-1 text-xs rounded-full font-mono ${statusColors[project.status]}`}
-                >
-                  {project.status}
-                </span>
-              </div>
-
-              {/* Description */}
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                {project.description}
-              </p>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
+            <RevealOnScroll key={project.title} delay={index * 100} className="h-full">
+              <div
+                className="card-3d surface-elevated glow-subtle rounded-xl p-8 lg:p-10 group cursor-pointer h-full"
+              >
+                {/* Header */}
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="font-semibold text-foreground text-lg group-hover:text-primary transition-colors duration-200">
+                    {project.title}
+                  </h3>
                   <span
-                    key={tag}
-                    className="px-3 py-1 text-xs font-mono text-muted-foreground bg-muted rounded-full border border-transparent group-hover:border-border transition-colors duration-200"
+                    className={`px-2 py-1 text-xs rounded-full font-mono ${statusColors[project.status]}`}
                   >
-                    {tag}
+                    {project.status}
                   </span>
-                ))}
-              </div>
+                </div>
 
-              {/* Arrow indicator */}
-              <div className="mt-6 flex items-center gap-2 text-sm text-muted-foreground group-hover:text-primary transition-colors duration-200">
-                <span>Learn more</span>
-                <svg
-                  className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-200"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
+                {/* Description */}
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  {project.description}
+                </p>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 text-xs font-mono text-muted-foreground bg-muted rounded-full border border-transparent group-hover:border-border transition-colors duration-200"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Arrow indicator */}
+                <div className="mt-6 flex items-center gap-2 text-sm text-muted-foreground group-hover:text-primary transition-colors duration-200">
+                  <span>Learn more</span>
+                  <svg
+                    className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-200"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </div>
               </div>
-            </div>
+            </RevealOnScroll>
           ))}
         </div>
       </div>

@@ -7,7 +7,6 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ScrollAssist from "./components/ScrollAssist";
 import Pointer3D from "./components/Pointer3D";
-import FloatingLogo from "./components/FloatingLogo";
 
 const queryClient = new QueryClient();
 
@@ -24,7 +23,6 @@ const App = () => (
         </Routes>
         <ScrollAssist />
         <Pointer3D />
-        <FloatingLogo />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
