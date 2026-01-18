@@ -21,6 +21,20 @@ const projects = [
     status: 'Development',
   },
   {
+    title: 'Piezo Electric Energy System',
+    description:
+      'A piezoelectric-based energy generation project focused on converting mechanical stress into usable electrical power. Designed for experimental applications.',
+    tags: ['Embedded Systems', 'Energy Harvesting', 'Sensors'],
+    status: 'Research / Prototype',
+  },
+  {
+    title: 'Vape Detection & Alert System',
+    description:
+      'Real-time vape detection system implemented across college premises to detect aerosol emissions and trigger instant alerts for campus safety.',
+    tags: ['IoT', 'Real-time Monitoring', 'Campus Safety'],
+    status: 'Deployed',
+  },
+  {
     title: 'Infrastructure Toolkit',
     description:
       'Developer tools for monitoring, deployment, and infrastructure management. CLI-first, batteries included.',
@@ -31,9 +45,11 @@ const projects = [
 
 const statusColors: Record<string, string> = {
   Production: 'bg-primary/20 text-primary',
+  Deployed: 'bg-primary/20 text-primary',
   Beta: 'bg-accent/20 text-accent',
   Development: 'bg-muted text-muted-foreground',
   Internal: 'bg-secondary text-secondary-foreground',
+  'Research / Prototype': 'bg-secondary text-secondary-foreground',
 };
 
 import RevealOnScroll from "./RevealOnScroll";
