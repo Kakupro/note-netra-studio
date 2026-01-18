@@ -191,6 +191,33 @@
   .animate-travel-light {
     animation: travel-diagonal 20s linear infinite;
   }
+
+  /* Shooting Star Animation */
+  @keyframes shoot {
+    0% {
+      transform: rotate(45deg) translateX(0) scaleX(0);
+      opacity: 0;
+    }
+
+    5% {
+      opacity: 0.3;
+      transform: rotate(45deg) translateX(40px) scaleX(1);
+    }
+
+    10% {
+      opacity: 0;
+      transform: rotate(45deg) translateX(120px) scaleX(0.5);
+    }
+
+    100% {
+      opacity: 0;
+      transform: rotate(45deg) translateX(120px) scaleX(0);
+    }
+  }
+
+  .animate-shoot {
+    animation: shoot 8s ease-out infinite;
+  }
 }
 
 @layer components {
