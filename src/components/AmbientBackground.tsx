@@ -9,6 +9,9 @@ const AmbientBackground = () => {
                 }}
             />
 
+            {/* Radial Vignette (Layered Behind Animations) */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/50 to-[#050505]" />
+
             {/* Primary Drift - Warm Ivory */}
             <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] rounded-[100%] bg-[#F5F1E8]/5 blur-[120px] animate-drift mix-blend-screen opacity-100" />
 
@@ -18,11 +21,8 @@ const AmbientBackground = () => {
             {/* Deep Center Depth - Beige Text Match */}
             <div className="absolute top-[30%] left-[20%] w-[50%] h-[50%] rounded-[100%] bg-[#EEE8DD]/2 blur-[150px] animate-drift animation-delay-4000 mix-blend-screen opacity-100" />
 
-            {/* Traveling Light Animation - Diagonal Beam */}
+            {/* Traveling Light Animation - Diagonal Beam (Uppermost) */}
             <div className="absolute -top-[50%] -left-[50%] w-[100vw] h-[200vh] bg-gradient-to-r from-transparent via-[#EEE8DD]/[0.03] to-transparent blur-[100px] animate-travel-light pointer-events-none" />
-
-            {/* Radial Vignette to focus center */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/50 to-[#050505]" />
         </div>
     );
 };
