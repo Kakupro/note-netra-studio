@@ -16,6 +16,7 @@ const founders = [
     role: 'Co-founder',
     focus: 'Strategy & Operations',
     initial: 'TD',
+    image: '/tanishq_profile.png',
   },
 ];
 
@@ -49,11 +50,15 @@ const FoundersSection = () => {
               <div
                 className="card-3d surface-elevated glow-subtle rounded-xl p-8 text-center group h-full"
               >
-                {/* Avatar placeholder */}
-                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-muted to-secondary flex items-center justify-center border border-border group-hover:border-primary/30 transition-colors duration-300">
-                  <span className="font-mono text-xl font-semibold text-muted-foreground group-hover:text-primary transition-colors duration-300">
-                    {founder.initial}
-                  </span>
+                {/* Avatar placeholder or Image */}
+                <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-muted to-secondary flex items-center justify-center border border-border group-hover:border-primary/30 transition-colors duration-300 overflow-hidden relative">
+                  {founder.image ? (
+                    <img src={founder.image} alt={founder.name} className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="font-mono text-xl font-semibold text-muted-foreground group-hover:text-primary transition-colors duration-300">
+                      {founder.initial}
+                    </span>
+                  )}
                 </div>
 
                 {/* Info */}
