@@ -37,19 +37,18 @@ const FounderCard = ({ founder, index }: { founder: typeof founders[0], index: n
   const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
-    // Stagger start: 1500ms initial hold + index stagger
-    const stagger = index * 200;
+    // Stagger start: 100-150ms stagger
+    const stagger = index * 150;
     let intervalId: NodeJS.Timeout;
 
     const startTimer = setTimeout(() => {
-      // Toggle every 2500ms (1.5s display + transition buffer)
-      // Actually user asked for ~1.5s display.
+      // Toggle every 5000ms (5s display per state, 10s total cycle)
       intervalId = setInterval(() => {
         if (!isHovered && !isPaused) {
           setAutoShow((prev) => !prev);
         }
-      }, 2500);
-    }, 1500 + stagger);
+      }, 5000);
+    }, 500 + stagger);
 
     return () => {
       clearTimeout(startTimer);
@@ -67,15 +66,15 @@ const FounderCard = ({ founder, index }: { founder: typeof founders[0], index: n
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => {
         setIsPaused(true);
-        // Resume after 4 seconds
-        setTimeout(() => setIsPaused(false), 4000);
+        // Resume after 5 seconds for mobile reading
+        setTimeout(() => setIsPaused(false), 5000);
       }}
     >
-      {/* Hover/Auto Overlay */}
+      {/* Info Overlay (Slides in from Right) */}
       <div
-        className={`absolute inset-0 bg-[#0A0A0A]/95 backdrop-blur-[2px] px-4 py-6 flex flex-col justify-between z-10 text-left transition-all duration-500 ease-in-out ${showInfo
-            ? 'opacity-100 visible translate-y-0'
-            : 'opacity-0 invisible translate-y-1'
+        className={`absolute inset-0 bg-[#0A0A0A] px-4 py-6 flex flex-col justify-between z-20 text-left transition-all duration-[800ms] ease-in-out ${showInfo
+            ? 'opacity-100 translate-x-0 visible'
+            : 'opacity-0 translate-x-2 invisible'
           }`}
       >
         {/* Top: Focus */}
@@ -103,30 +102,38 @@ const FounderCard = ({ founder, index }: { founder: typeof founders[0], index: n
         </div>
       </div>
 
-      {/* Avatar placeholder or Image */}
-      <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-muted to-secondary flex items-center justify-center border border-border group-hover:border-primary/30 transition-colors duration-300 overflow-hidden relative">
-        {founder.image ? (
-          <img
-            src={founder.image}
-            alt={founder.name}
-            className="w-full h-full object-cover"
-            style={{ objectPosition: founder.imagePosition || 'center' }}
-          />
-        ) : (
-          <span className="font-mono text-xl font-semibold text-muted-foreground group-hover:text-primary transition-colors duration-300">
-            {founder.initial}
-          </span>
-        )}
-      </div>
+      {/* Profile Content (Slides in from Left) */}
+      <div
+        className={`h-full flex flex-col justify-center transition-all duration-[800ms] ease-in-out ${showInfo
+            ? 'opacity-0 -translate-x-2'
+            : 'opacity-100 translate-x-0'
+          }`}
+      >
+        {/* Avatar placeholder or Image */}
+        <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-br from-muted to-secondary flex items-center justify-center border border-border group-hover:border-primary/30 transition-colors duration-300 overflow-hidden relative">
+          {founder.image ? (
+            <img
+              src={founder.image}
+              alt={founder.name}
+              className="w-full h-full object-cover"
+              style={{ objectPosition: founder.imagePosition || 'center' }}
+            />
+          ) : (
+            <span className="font-mono text-xl font-semibold text-muted-foreground group-hover:text-primary transition-colors duration-300">
+              {founder.initial}
+            </span>
+          )}
+        </div>
 
-      {/* Info */}
-      <h3 className="font-semibold text-foreground mb-1">
-        {founder.name}
-      </h3>
-      <p className="text-sm text-primary mb-3">{founder.role}</p>
-      <p className="text-xs text-muted-foreground font-mono">
-        {founder.focus}
-      </p>
+        {/* Info */}
+        <h3 className="font-semibold text-foreground mb-1">
+          {founder.name}
+        </h3>
+        <p className="text-sm text-primary mb-3">{founder.role}</p>
+        <p className="text-xs text-muted-foreground font-mono">
+          {founder.focus}
+        </p>
+      </div>
     </div>
   );
 };
