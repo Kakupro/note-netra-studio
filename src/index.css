@@ -2,95 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 220 20% 6%;
+    --foreground: 210 20% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 92%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 210 60% 55%;
+    --primary-foreground: 220 20% 6%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 210 20% 85%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 12%;
+    --muted-foreground: 215 15% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 50% 50%;
+    --accent-foreground: 210 20% 95%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 62% 50%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 210 60% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Custom tokens */
+    --glow-primary: 210 60% 55%;
+    --surface-elevated: 220 16% 12%;
+    --text-tertiary: 215 12% 45%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 220 20% 6%;
+    --foreground: 210 20% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 210 60% 55%;
+    --primary-foreground: 220 20% 6%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 210 20% 85%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 15% 12%;
+    --muted-foreground: 215 15% 55%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 210 50% 50%;
+    --accent-foreground: 210 20% 95%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 62% 50%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 210 60% 55%;
   }
 }
 
@@ -99,7 +78,127 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  /* 3D Card Effect */
+  .card-3d {
+    @apply relative transition-all duration-300 ease-out;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+
+  .card-3d:hover {
+    transform: translateY(-4px) rotateX(2deg) rotateY(-2deg);
+  }
+
+  /* Subtle glow effect */
+  .glow-subtle {
+    box-shadow: 
+      0 0 0 1px hsl(var(--border)),
+      0 4px 20px -4px hsl(var(--primary) / 0.1),
+      0 8px 40px -8px hsl(var(--background) / 0.8);
+  }
+
+  .glow-subtle:hover {
+    box-shadow: 
+      0 0 0 1px hsl(var(--primary) / 0.3),
+      0 8px 30px -4px hsl(var(--primary) / 0.15),
+      0 16px 60px -8px hsl(var(--background) / 0.9);
+  }
+
+  /* Depth shadow */
+  .shadow-depth {
+    box-shadow: 
+      0 1px 2px hsl(0 0% 0% / 0.3),
+      0 4px 8px hsl(0 0% 0% / 0.25),
+      0 8px 16px hsl(0 0% 0% / 0.2);
+  }
+
+  /* Text gradient */
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      hsl(var(--foreground)) 0%,
+      hsl(var(--primary)) 100%
+    );
+  }
+
+  /* Monospace text */
+  .font-mono-custom {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Elevated surface */
+  .surface-elevated {
+    @apply bg-card border border-border;
+    background: linear-gradient(
+      180deg,
+      hsl(var(--surface-elevated)) 0%,
+      hsl(var(--card)) 100%
+    );
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply w-full h-px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--border)) 50%,
+      transparent 100%
+    );
+  }
+
+  /* Accent line */
+  .accent-line {
+    @apply h-px w-12;
+    background: hsl(var(--primary));
+  }
+}
+
+@layer components {
+  /* Hero heading */
+  .heading-hero {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-tight;
+  }
+
+  /* Section heading */
+  .heading-section {
+    @apply text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight;
+  }
+
+  /* Body text */
+  .text-body {
+    @apply text-base sm:text-lg text-muted-foreground leading-relaxed;
+  }
+
+  /* Label text */
+  .text-label {
+    @apply text-xs uppercase tracking-widest text-muted-foreground font-medium;
+  }
+
+  /* Container */
+  .container-main {
+    @apply max-w-6xl mx-auto px-6 sm:px-8 lg:px-12;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-20 sm:py-28 lg:py-36;
+  }
+
+  /* Animate on load with visible end state */
+  .animate-fade-up-visible {
+    animation: fade-up 0.6s ease-out forwards;
   }
 }
