@@ -13,37 +13,51 @@ const AboutSection = () => {
             <RevealOnScroll>
               <div className="accent-line mb-6" />
               <span className="text-label mb-4 block">About us</span>
-              <h2 className="heading-section mb-6">
-                Two companies.
+              <h2 className="heading-section mb-6 text-[#EEE8DD]">
+                Engineering,
                 <br />
-                One mission.
+                done deliberately.
               </h2>
-              <div className="space-y-6 text-body">
+
+              <div className="space-y-8 text-body text-sm sm:text-base">
                 <p>
-                  At Note Netra, we believe that information overload is a design
-                  problem, not a human one. Our mission is to create tools that
-                  augment your memory, not replace it.
+                  <span className="font-semibold text-[#EEE8DD]">Kenet Technologies</span> is a product-driven engineering company focused on building systems that work in the real world. We don’t chase trends or ship abstractions — we design, test, and deploy technology where reliability actually matters.
                 </p>
-                <p>
-                  We are a subsidiary of{' '}
-                  <span className="inline-flex items-baseline gap-1 mx-1.5 translate-y-[1.5px]">
-                    <span className="font-bold text-[#EEE8DD] text-[1.1rem] tracking-tight leading-none">Kenet</span>
-                    <span className="font-medium text-[#E6DECF] text-[1rem] tracking-tight leading-none">Technologies</span>
-                  </span>
-                  , carrying forward the legacy of robust engineering into the realm of intelligent information management.
-                </p>
-                <div className="mt-8 flex gap-4">
+
+                <div className="space-y-4">
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-[#C0B8A0]">How we work</h3>
+                  <div className="space-y-2 pl-3 border-l-2 border-[#C0B8A0]/20">
+                    <p className="font-medium text-foreground">Problems first. Technology second.</p>
+                    <p className="font-medium text-foreground">Systems over features.</p>
+                    <p className="font-medium text-foreground">Deployment over demos.</p>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    Every product we ship is engineered to operate under real constraints — scale, cost, performance, and longevity.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-[#C0B8A0]">Our ventures</h3>
+                  <p>
+                    Kenet Technologies builds and operates focused ventures where deep engineering is required.
+                  </p>
+                  <p>
+                    <span className="font-semibold text-[#EEE8DD]">Note Netra</span> is one such subsidiary — an AI-driven information system designed to reduce cognitive overload and improve how people work with complex information.
+                  </p>
+                </div>
+
+                <div className="flex gap-8 border-t border-border/40 pt-6 mt-2">
                   <div className="flex flex-col">
-                    <span className="text-3xl font-bold text-foreground">3+</span>
-                    <span className="text-xs text-muted-foreground uppercase tracking-wider mt-1">
-                      Years R&D
+                    <span className="text-3xl font-bold text-[#EEE8DD]">3+</span>
+                    <span className="text-[10px] text-muted-foreground uppercase tracking-wider mt-1">
+                      Years Applied R&D
                     </span>
                   </div>
-                  <div className="w-px h-12 bg-border mx-4" />
+                  <div className="w-px h-10 bg-border/40" />
                   <div className="flex flex-col">
-                    <span className="text-3xl font-bold text-foreground">10k+</span>
-                    <span className="text-xs text-muted-foreground uppercase tracking-wider mt-1">
-                      Users
+                    <span className="text-3xl font-bold text-[#EEE8DD]">10k+</span>
+                    <span className="text-[10px] text-muted-foreground uppercase tracking-wider mt-1">
+                      Users Deployed
                     </span>
                   </div>
                 </div>
