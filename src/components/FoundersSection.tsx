@@ -10,6 +10,7 @@ const founders = [
     role: 'Co-founder',
     focus: 'Technology & Systems',
     initial: 'AG',
+    image: '/anmol_garg.png',
   },
   {
     name: 'Tanishq Dagar',
