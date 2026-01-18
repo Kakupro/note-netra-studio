@@ -4,6 +4,7 @@ import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import FoundersSection from '@/components/FoundersSection';
 import ProjectsSection from '@/components/ProjectsSection';
+import GlowSeparator from '@/components/GlowSeparator';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -29,8 +30,11 @@ const Index = () => {
           style={{ backgroundImage: 'url("/favicon.png")', transform: `scale(0.8) rotate(${rotation}deg)` }}
         />
         <HeroSection />
+        <GlowSeparator />
         <AboutSection />
+        <GlowSeparator />
         <FoundersSection />
+        <GlowSeparator />
         <ProjectsSection />
       </main>
       <Footer />
