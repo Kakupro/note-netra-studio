@@ -1,106 +1,60 @@
 import RevealOnScroll from "./RevealOnScroll";
 
 const AboutSection = () => {
+  const tags = ["Documents", "Notes", "AI Processing", "Search"];
+
   return (
-    <section id="about" className="section-padding">
-      <div className="container-main">
-        {/* Section header */}
-        <div className="max-w-3xl mb-16">
-          <RevealOnScroll>
-            <div className="accent-line mb-6" />
-            <span className="text-label mb-4 block">About us</span>
-            <h2 className="heading-section mb-6">
-              Two companies.
-              <br />
-              One mission.
-            </h2>
-            <p className="text-body">
-              We believe in building technology that solves real problems, not
-              chasing trends.
-            </p>
-          </RevealOnScroll>
-        </div>
+    <section id="about" className="section-padding flex items-center justify-center min-h-[60vh]">
+      <div className="container-main max-w-4xl">
+        <RevealOnScroll>
+          <div className="relative group">
+            {/* Glossy sheen effect overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl" />
 
-        {/* Cards */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {/* Kenet Technologies Card */}
-          <RevealOnScroll delay={100} className="h-full">
-            <div className="card-3d surface-elevated glow-subtle rounded-xl p-8 lg:p-10 h-full">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <span className="text-primary font-mono font-bold text-lg">K</span>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground">Kenet Technologies</h3>
-                  <span className="text-xs text-muted-foreground">Parent Company</span>
-                </div>
-              </div>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Kenet Technologies is our core entity, focused on building
-                intelligent systems, automation platforms, and developer tools.
-                We take on complex engineering challenges and turn them into
-                reliable, production-ready solutions.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {['Systems', 'Automation', 'AI/ML', 'Infrastructure'].map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 text-xs font-mono text-muted-foreground bg-muted rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </RevealOnScroll>
+            <div className="rounded-3xl bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(255,255,255,0.07)] p-8 md:p-12 lg:p-16 hover:border-white/20 transition-all duration-300">
 
-          {/* Note Netra Card */}
-          <RevealOnScroll delay={200} className="h-full">
-            <div className="card-3d surface-elevated glow-subtle rounded-xl p-8 lg:p-10 h-full">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
-                  <span className="text-accent font-mono font-bold text-lg">N</span>
+              {/* Header */}
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-10">
+                {/* Logo N */}
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-white/20 to-black border border-white/20 shadow-inner flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300">
+                  <span className="font-sans font-bold text-3xl text-white drop-shadow-md">N</span>
                 </div>
-                <div>
-                  <a href="https://www.notenetra.in/" target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground hover:text-primary transition-colors duration-200">
+
+                <div className="flex flex-col">
+                  <h2 className="font-bold text-white text-4xl md:text-5xl tracking-tight leading-none mb-2">
                     Note Netra
-                  </a>
-                  <span className="text-xs text-muted-foreground">Subsidiary</span>
+                  </h2>
+                  <span className="text-sm md:text-base font-medium text-white/50 tracking-[0.2em] uppercase">
+                    Subsidiary
+                  </span>
                 </div>
               </div>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Note Netra is our specialized venture in intelligent document
-                processing and note-taking solutions. It leverages AI to transform
-                how people capture, organize, and retrieve information.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {['Documents', 'Notes', 'AI Processing', 'Search'].map((tag) => (
+
+              {/* Body */}
+              <div className="space-y-6 text-white/80 text-lg md:text-xl leading-relaxed font-light">
+                <p>
+                  Note Netra is a pioneering subsidiary of <span className="font-semibold text-white">Kenet Technologies</span>, dedicated to revolutionizing AI-driven document processing.
+                </p>
+                <p>
+                  We specialize in intelligent note-taking solutions that help users seamlessly capture, organize, and retrieve information, transforming unstructured data into actionable knowledge.
+                </p>
+              </div>
+
+              {/* Footer / Tags */}
+              <div className="mt-12 pt-8 border-t border-white/10 flex flex-wrap gap-3">
+                {tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1 text-xs font-mono text-muted-foreground bg-muted rounded-full"
+                    className="px-5 py-2 text-sm font-medium text-white/90 bg-white/5 border border-white/10 rounded-full hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-sm backdrop-blur-sm"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-            </div>
-          </RevealOnScroll>
-        </div>
 
-        {/* Relationship diagram */}
-        <div className="mt-16 flex items-center justify-center">
-          <div className="flex items-center gap-4 text-muted-foreground text-sm">
-            <span className="font-mono">Kenet</span>
-            <div className="w-16 h-px bg-border relative">
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-t border-r border-border rotate-45" />
             </div>
-            <span className="text-xs text-muted-foreground">owns</span>
-            <div className="w-16 h-px bg-border relative">
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-t border-r border-border rotate-45" />
-            </div>
-            <a href="https://www.notenetra.in/" target="_blank" rel="noopener noreferrer" className="font-mono hover:text-primary transition-colors duration-200">Note Netra</a>
           </div>
-        </div>
+        </RevealOnScroll>
       </div>
     </section>
   );
