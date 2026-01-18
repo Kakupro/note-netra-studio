@@ -7,6 +7,8 @@ import ProjectsSection from '@/components/ProjectsSection';
 import GlowSeparator from '@/components/GlowSeparator';
 import Footer from '@/components/Footer';
 
+import AmbientBackground from '@/components/AmbientBackground';
+
 const Index = () => {
   const [rotation, setRotation] = useState(0);
 
@@ -22,6 +24,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <AmbientBackground />
       <Navbar />
       <main className="relative z-10 w-full overflow-hidden">
         <HeroSection />
