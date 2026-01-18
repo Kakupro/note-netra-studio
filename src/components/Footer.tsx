@@ -67,9 +67,14 @@ const Footer = () => {
                 </span>
                 <ul className="space-y-2">
                   <li>
-                    <span className="text-sm text-muted-foreground">
+                    <a
+                      href="https://www.notenetra.in/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                    >
                       Note Netra
-                    </span>
+                    </a>
                   </li>
                 </ul>
               </div>

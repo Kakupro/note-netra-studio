@@ -55,7 +55,9 @@ const AboutSection = () => {
                 <span className="text-accent font-mono font-bold text-lg">N</span>
               </div>
               <div>
-                <h3 className="font-semibold text-foreground">Note Netra</h3>
+                <a href="https://www.notenetra.in/" target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground hover:text-primary transition-colors duration-200">
+                  Note Netra
+                </a>
                 <span className="text-xs text-muted-foreground">Subsidiary</span>
               </div>
             </div>
@@ -88,7 +90,7 @@ const AboutSection = () => {
             <div className="w-16 h-px bg-border relative">
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-t border-r border-border rotate-45" />
             </div>
-            <span className="font-mono">Note Netra</span>
+            <a href="https://www.notenetra.in/" target="_blank" rel="noopener noreferrer" className="font-mono hover:text-primary transition-colors duration-200">Note Netra</a>
           </div>
         </div>
       </div>
