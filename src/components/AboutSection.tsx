@@ -26,9 +26,9 @@ const AboutSection = () => {
                 </p>
                 <p>
                   We are a subsidiary of{' '}
-                  <span className="inline-flex items-baseline gap-1.5 mx-1 relative top-[2px]">
-                    <span className="font-bold text-[#EEE8DD] text-lg tracking-tight">Kenet</span>
-                    <span className="font-medium text-[#E6DECF]/90 text-base tracking-normal">Technologies</span>
+                  <span className="inline-flex items-baseline gap-1 mx-1.5 translate-y-[1.5px]">
+                    <span className="font-bold text-[#EEE8DD] text-[1.1rem] tracking-tight leading-none">Kenet</span>
+                    <span className="font-medium text-[#E6DECF] text-[1rem] tracking-tight leading-none">Technologies</span>
                   </span>
                   , carrying forward the legacy of robust engineering into the realm of intelligent information management.
                 </p>
