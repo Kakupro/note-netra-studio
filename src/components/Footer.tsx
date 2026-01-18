@@ -7,11 +7,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Left side */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <span className="font-semibold text-lg tracking-tight text-foreground">
-                Kenet
+            <div className="flex items-center mb-6">
+              <span className="inline-flex items-baseline gap-1">
+                <span className="font-bold text-[#EEE8DD] text-lg tracking-tight leading-none">Kenet</span>
+                <span className="font-medium text-[#E6DECF] text-base tracking-tight leading-none">Technologies</span>
               </span>
-              <span className="text-primary font-mono text-sm">Technologies</span>
             </div>
             <p className="text-muted-foreground text-sm max-w-md mb-6">
               Building intelligent systems and automation tools that solve

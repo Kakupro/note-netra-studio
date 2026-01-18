@@ -13,19 +13,18 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? 'bg-background/80 backdrop-blur-lg border-b border-border'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <div className="container-main">
         <div className="flex items-center justify-between h-16 sm:h-20">
-          <a href="#" className="flex items-center gap-2">
-            <span className="font-semibold text-lg tracking-tight text-foreground">
-              Kenet
+          <a href="#" className="flex items-center">
+            <span className="inline-flex items-baseline gap-1">
+              <span className="font-bold text-[#EEE8DD] text-lg tracking-tight leading-none">Kenet</span>
+              <span className="font-medium text-[#E6DECF] text-base tracking-tight leading-none">Technologies</span>
             </span>
-            <span className="text-primary font-mono text-sm">Technologies</span>
           </a>
 
           <div className="hidden md:flex items-center gap-8">
