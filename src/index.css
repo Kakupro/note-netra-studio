@@ -82,8 +82,14 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased select-none;
     font-family: 'Open Sans', system-ui, sans-serif;
+  }
+
+  /* Restore text selection for inputs and textareas */
+  input,
+  textarea {
+    @apply select-text;
   }
 
 
