@@ -24,7 +24,7 @@ const HeroSection = () => {
 
         {/* 1. Eyebrow */}
         <RevealOnScroll delay={100}>
-          <div className="mb-6 flex items-center gap-3 opacity-90">
+          <div className="mb-6 flex items-center gap-3 opacity-90 select-none">
             <div className="h-px w-8 bg-[#C0B8A0]/40"></div>
             <span className="text-[11px] uppercase tracking-[0.2em] text-[#C0B8A0] font-medium">
               Building the future, methodically
@@ -35,7 +35,7 @@ const HeroSection = () => {
 
         {/* 2. Headline: Two Beats */}
         <RevealOnScroll delay={300}>
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 select-none">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] text-[#EEE8DD] mb-2">
               We don’t just build technology.
             </h1>
@@ -45,8 +45,8 @@ const HeroSection = () => {
           </div>
         </RevealOnScroll>
 
-        {/* 3. Concept Node Graphic */}
-        <RevealOnScroll delay={500} className="w-full flex justify-center mb-16">
+        {/* 3D Concept Node Graphic */}
+        <RevealOnScroll delay={500} className="w-full flex justify-center mb-16 select-none">
           <div className="relative flex flex-col items-center w-full max-w-lg">
 
             {/* Center Node */}
