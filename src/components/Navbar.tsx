@@ -14,8 +14,8 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-          ? 'bg-background/80 backdrop-blur-lg border-b border-border'
-          : 'bg-transparent'
+        ? 'bg-background/80 backdrop-blur-lg border-b border-border'
+        : 'bg-transparent'
         }`}
     >
       <div className="container-main">
@@ -30,19 +30,19 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-8">
             <a
               href="#about"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className="text-sm font-bold uppercase text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
               About
             </a>
             <a
               href="#founders"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className="text-sm font-bold uppercase text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
               Team
             </a>
             <a
               href="#projects"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className="text-sm font-bold uppercase text-muted-foreground hover:text-foreground transition-colors duration-200"
             >
               Projects
             </a>
