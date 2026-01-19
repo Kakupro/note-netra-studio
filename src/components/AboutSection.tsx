@@ -4,7 +4,7 @@ const AboutSection = () => {
   const tags = ["Documents", "Notes", "AI Processing", "Search"];
 
   return (
-    <section id="about" className="section-padding">
+    <section id="about" className="section-padding select-none">
       <div className="container-main">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
 
