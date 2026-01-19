@@ -36,25 +36,40 @@ const FounderCard = ({ founder, index }: { founder: typeof founders[0], index: n
   const [isHovered, setIsHovered] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
 
+  // Re-implemented logic to be robust with hover/pause
   useEffect(() => {
-    // Stagger start: 100-150ms stagger
-    const stagger = index * 150;
-    let intervalId: NodeJS.Timeout;
+    if (isHovered || isPaused) return;
 
-    const startTimer = setTimeout(() => {
-      // Toggle every 5000ms (5s display per state, 10s total cycle)
-      intervalId = setInterval(() => {
-        if (!isHovered && !isPaused) {
-          setAutoShow((prev) => !prev);
-        }
-      }, 5000);
+    const stagger = index * 200;
+    let timeoutId: ReturnType<typeof setTimeout>;
+
+    // Cycle times
+    const SHOW_TIME = 8000; // Info visible duration
+    const HIDE_TIME = 5000; // Main visible duration (shortened slightly to keep flow moving)
+
+    const loop = (show: boolean) => {
+      // Duration to hold the CURRENT state before switching
+      const duration = show ? SHOW_TIME : HIDE_TIME;
+
+      timeoutId = setTimeout(() => {
+        setAutoShow(!show);
+        loop(!show);
+      }, duration);
+    };
+
+    // Initial start
+    const startDelay = setTimeout(() => {
+      // Trigger first switch to Show
+      setAutoShow(true);
+      loop(true);
     }, 500 + stagger);
 
     return () => {
-      clearTimeout(startTimer);
-      if (intervalId) clearInterval(intervalId);
+      clearTimeout(startDelay);
+      clearTimeout(timeoutId);
     };
   }, [index, isHovered, isPaused]);
+
 
   // Show info if hovered, paused (tapped), or auto-cycle is active
   const showInfo = isHovered || isPaused || autoShow;
@@ -63,18 +78,22 @@ const FounderCard = ({ founder, index }: { founder: typeof founders[0], index: n
     <div
       className="card-3d surface-elevated glow-subtle rounded-xl p-8 text-center group h-full relative overflow-hidden cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseLeave={() => {
+        setIsHovered(false);
+        // When unhovering, if we are "paused", we might want to let autoShow take over cleanly.
+        // Effect will restart loop.
+      }}
       onClick={() => {
         setIsPaused(true);
-        // Resume after 5 seconds for mobile reading
-        setTimeout(() => setIsPaused(false), 5000);
+        // Resume after 8 seconds (matching reading time)
+        setTimeout(() => setIsPaused(false), 8000);
       }}
     >
-      {/* Info Overlay (Slides in from Right) */}
+      {/* Info Overlay (Slides in from Left-Bottom) */}
       <div
-        className={`absolute inset-0 bg-[#0A0A0A] p-6 flex flex-col justify-between z-20 text-left transition-all duration-[800ms] ease-in-out ${showInfo
-          ? 'opacity-100 translate-x-0 visible'
-          : 'opacity-0 translate-x-2 invisible'
+        className={`absolute inset-0 bg-[#0A0A0A] p-6 flex flex-col justify-between z-20 text-left transition-all duration-[2000ms] ease-in-out ${showInfo
+          ? 'opacity-100 translate-x-0 translate-y-0 visible'
+          : 'opacity-0 -translate-x-[12px] translate-y-[12px] invisible'
           }`}
       >
         {/* Top: Focus */}
@@ -102,11 +121,11 @@ const FounderCard = ({ founder, index }: { founder: typeof founders[0], index: n
         </div>
       </div>
 
-      {/* Profile Content (Slides in from Left) */}
+      {/* Profile Content (Slides out slightly/Fades) */}
       <div
-        className={`h-full flex flex-col justify-center transition-all duration-[800ms] ease-in-out ${showInfo
-          ? 'opacity-0 -translate-x-2'
-          : 'opacity-100 translate-x-0'
+        className={`h-full flex flex-col justify-center transition-all duration-[2000ms] ease-in-out ${showInfo
+          ? 'opacity-0 translate-x-[12px] -translate-y-[12px]'
+          : 'opacity-100 translate-x-0 translate-y-0'
           }`}
       >
         {/* Avatar placeholder or Image */}
