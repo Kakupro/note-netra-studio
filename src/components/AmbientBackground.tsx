@@ -1,12 +1,7 @@
-import { Experience } from "./3d/Experience";
-
 const AmbientBackground = () => {
     return (
         <div className="fixed inset-0 min-h-screen w-full overflow-hidden pointer-events-none bg-[#050505]">
-            {/* 3D Live Background Layer */}
-            <div className="absolute inset-0 z-0">
-                <Experience />
-            </div>
+
 
             {/* Texture Overlay (Static Noise) */}
             <div
