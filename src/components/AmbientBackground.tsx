@@ -1,6 +1,6 @@
 const AmbientBackground = () => {
     return (
-        <div className="fixed inset-0 min-h-screen w-full overflow-hidden pointer-events-none -z-50 bg-[#050505]">
+        <div className="fixed inset-0 min-h-screen w-full overflow-hidden pointer-events-none bg-[#050505]">
             {/* Texture Overlay (Static Noise) */}
             <div
                 className="absolute inset-0 opacity-[0.035] mix-blend-overlay"
