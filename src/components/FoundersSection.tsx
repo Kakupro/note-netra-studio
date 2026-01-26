@@ -4,10 +4,11 @@ import RevealOnScroll from "./RevealOnScroll";
 const founders = [
   {
     name: 'Chaitanya Sethi',
-    role: 'Co-founder',
+    role: 'Founder',
     focus: 'Engineering & Product',
     initial: 'CS',
-    skills: ['System Design', 'Scalability', 'Product Eng'],
+    image: '/chaitanya_sethi.png',
+    skills: ['System Design', 'Backend', 'Product Eng'],
     bio: 'Leads product engineering and system design. Experienced in building scalable applications, core logic, and production-ready architectures. Focused on turning complex ideas into reliable products.',
   },
   {
@@ -17,7 +18,7 @@ const founders = [
     initial: 'AG',
     image: '/anmol_garg.png',
     imagePosition: '50% 20%',
-    skills: ['Architecture', 'Backend', 'Automation'],
+    skills: ['Architecture', 'Scalability', 'Automation'],
     bio: 'Specializes in system architecture, backend engineering, and automation. Works on infrastructure, integrations, and performance-critical systems. Focused on building reliable systems that scale in production.',
   },
   {
