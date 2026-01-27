@@ -7,7 +7,6 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import ScrollAssist from "./components/ScrollAssist";
 import AmbientBackground from "./components/AmbientBackground";
-import BackgroundCharacter3D from "./components/BackgroundCharacter3D"; // Import the new 3D background
 
 const queryClient = new QueryClient();
 
@@ -32,9 +31,7 @@ const App = () => {
 
         <div className={`transition-opacity duration-1000 ${!isContentVisible ? 'opacity-0 h-0 overflow-hidden' : 'opacity-100'}`}>
           <BrowserRouter>
-            {/* Render both the ambient effects and the 3D Character in the background */}
             <AmbientBackground />
-            <BackgroundCharacter3D />
 
             <Routes>
               <Route path="/" element={<Index />} />
