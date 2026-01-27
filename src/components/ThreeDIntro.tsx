@@ -71,41 +71,21 @@ const ThreeDIntro = ({ onEnter }: ThreeDIntroProps) => {
                 </Canvas>
             </div>
 
-            {/* Overlay Content - Mixed 3D/Text Layout inspired by 'BORN OF NATURE' */}
+            {/* Overlay Content - Mixed 3D/Text Layout */}
             <div className="relative z-10 w-full h-full flex flex-col items-center justify-center pointer-events-none select-none">
 
-                {/* Top Text Group */}
+                {/* Central Typographic Lockup */}
                 <motion.div
-                    initial={{ opacity: 0, y: -20, filter: 'blur(10px)' }}
-                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                    transition={{ duration: 1.2, ease: "easeOut" }}
-                    className="absolute top-[35%] md:top-[30%] left-[10%] md:left-[20%] text-left"
+                    initial={{ opacity: 0, scale: 0.9, filter: 'blur(10px)' }}
+                    animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
+                    transition={{ duration: 1.5, ease: "easeOut" }}
+                    className="flex flex-col items-center justify-center z-20 mix-blend-exclusion"
                 >
-                    <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 drop-shadow-2xl font-serif">
-                        KEN
+                    <h1 className="text-7xl md:text-9xl lg:text-[12rem] leading-none font-bold tracking-tighter text-[#EEE8DD] font-serif text-center drop-shadow-2xl">
+                        KENET
                     </h1>
-                </motion.div>
-
-                {/* Bottom Text Group */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
-                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                    transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-                    className="absolute bottom-[35%] md:bottom-[30%] right-[10%] md:right-[20%] text-right"
-                >
-                    <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 drop-shadow-2xl font-serif z-20 relative">
-                        ET
-                    </h1>
-                </motion.div>
-
-                {/* Center/Connective Text */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.8, duration: 1 }}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 mix-blend-difference"
-                >
-                    <h2 className="text-xl md:text-2xl font-light tracking-[0.8em] text-[#C0B8A0] uppercase whitespace-nowrap">
+                    <div className="h-px w-24 md:w-48 bg-[#EEE8DD]/50 my-6" />
+                    <h2 className="text-xl md:text-3xl font-light tracking-[0.8em] text-[#EEE8DD] uppercase whitespace-nowrap pl-2">
                         TECHNOLOGIES
                     </h2>
                 </motion.div>
@@ -114,14 +94,14 @@ const ThreeDIntro = ({ onEnter }: ThreeDIntroProps) => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 1.5, duration: 1 }}
+                    transition={{ delay: 2, duration: 1 }}
                     className="absolute bottom-12 pointer-events-auto"
                 >
                     <button
                         onClick={handleEnter}
                         onMouseEnter={() => setHovered(true)}
                         onMouseLeave={() => setHovered(false)}
-                        className="group relative px-8 py-3 bg-transparent text-white/80 rounded-none uppercase tracking-widest text-[10px] sm:text-xs font-medium transition-all duration-300 hover:text-white"
+                        className="group relative px-8 py-3 bg-transparent text-white/80 rounded-none uppercase tracking-widest text-[10px] sm:text-xs font-medium transition-all duration-300 hover:text-white hover:tracking-[0.3em]"
                     >
                         <span className="relative z-10 flex items-center gap-2">
                             Enter Experience
