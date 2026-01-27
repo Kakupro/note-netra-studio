@@ -7,9 +7,6 @@ import ProjectsSection from '@/components/ProjectsSection';
 import ContactSection from '@/components/ContactSection';
 import GlowSeparator from '@/components/GlowSeparator';
 import Footer from '@/components/Footer';
-
-import AmbientBackground from '@/components/AmbientBackground';
-
 import ScrollIndicator from '@/components/ScrollIndicator';
 
 const Index = () => {
@@ -26,8 +23,8 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
-      <AmbientBackground />
+    <div className="min-h-screen bg-transparent">
+      {/* AmbientBackground and Character are now global in App.tsx */}
       <Navbar />
       <main className="relative z-10 w-full overflow-hidden">
         <HeroSection />
