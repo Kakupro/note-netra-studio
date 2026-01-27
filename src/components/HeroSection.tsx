@@ -69,15 +69,15 @@ const HeroSection = () => {
             </div>
 
             {/* Values Row */}
-            <div className="flex justify-between w-[90%] max-w-[400px] mt-6">
-              <span className="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-[#E6DECF]/70 text-center w-1/3">
-                Reliability
+            <div className="flex justify-between w-[90%] max-w-[400px] mt-6 gap-2">
+              <span className="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-[#E6DECF]/70 text-center w-1/3 border-b border-[#C0B8A0]/10 pb-2">
+                Freelancing
               </span>
-              <span className="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-[#E6DECF]/70 text-center w-1/3">
-                Clarity
+              <span className="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-[#E6DECF]/70 text-center w-1/3 border-b border-[#C0B8A0]/10 pb-2">
+                3D Web
               </span>
-              <span className="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-[#E6DECF]/70 text-center w-1/3">
-                Impact
+              <span className="text-[10px] sm:text-xs uppercase tracking-[0.15em] text-[#E6DECF]/70 text-center w-1/3 border-b border-[#C0B8A0]/10 pb-2">
+                Scalable Systems
               </span>
             </div>
 

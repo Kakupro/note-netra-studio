@@ -12,9 +12,11 @@ const ContactSection = () => {
             <div className="container-main relative z-10 flex flex-col items-center">
                 <RevealOnScroll>
                     <div className="flex flex-col items-center text-center mb-12">
-                        <h2 className="heading-section mb-4 text-[#EEE8DD]">Get in Touch</h2>
-                        <p className="text-body max-w-lg mx-auto">
-                            Open to collaboration, inquiries, or just a conversation about engineered systems.
+                        <h2 className="heading-section mb-6 text-[#EEE8DD]">Ready to Scale?</h2>
+                        <p className="text-body max-w-lg mx-auto text-lg">
+                            We are currently accepting new <strong>freelance projects</strong> and collaborations.
+                            <br className="hidden sm:block" />
+                            Let's build a system that sets you apart.
                         </p>
                     </div>
                 </RevealOnScroll>
