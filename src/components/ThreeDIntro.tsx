@@ -1,10 +1,19 @@
-
 import { useRef, useState, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, Environment, Stars, MeshDistortMaterial, PerspectiveCamera, Sparkles } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import * as THREE from 'three';
 import { ArrowRight } from 'lucide-react';
+
+// --- Global Mouse Tracker ---
+const mouse = new THREE.Vector2(0, 0);
+if (typeof window !== 'undefined') {
+    window.addEventListener('mousemove', (e) => {
+        // Normalize: -1 to +1
+        mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+    });
+}
 
 interface ThreeDIntroProps {
     onEnter: () => void;
@@ -15,22 +24,33 @@ const LiquidChrome = () => {
 
     useFrame((state) => {
         if (meshRef.current) {
-            // Slow, organic rotation
+            // Smooth Rotation
             meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.1;
             meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.15;
+
+            // Smooth Position Tracking (Follows Cursor)
+            // We multiply by a factor (e.g., 2) to give it enough range to move across the screen
+            const targetX = mouse.x * 3;
+            const targetY = mouse.y * 1.5;
+
+            // Lerp for smooth, lag-free movement
+            // 0.1 is the 'smoothness' factor. Higher = snappier, Lower = floatier.
+            meshRef.current.position.x = THREE.MathUtils.lerp(meshRef.current.position.x, targetX, 0.1);
+            meshRef.current.position.y = THREE.MathUtils.lerp(meshRef.current.position.y, targetY, 0.1);
         }
     });
 
     return (
-        <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1}>
-            <mesh ref={meshRef} scale={2}>
+        <Float speed={1.5} rotationIntensity={0.5} floatIntensity={1} floatingRange={[-0.1, 0.1]}>
+            {/* Reduced floating range so it doesn't fight the mouse tracking too much */}
+            <mesh ref={meshRef} scale={2.2}>
                 {/* Sphere with high subdivision for smooth liquid effect */}
-                <sphereGeometry args={[1, 64, 64]} />
+                <sphereGeometry args={[1, 128, 128]} />
                 <MeshDistortMaterial
                     color="#aaaaaa" // Light silver/chrome base
                     attach="material"
-                    distort={0.6} // High distortion for "liquid" look
-                    speed={1.5}
+                    distort={0.5} // High distortion for "liquid" look
+                    speed={2}
                     roughness={0} // Perfectly smooth like chrome
                     metalness={1} // Fully metallic
                     bumpScale={0.005} // Subtle surface detail
@@ -57,7 +77,7 @@ const ThreeDIntro = ({ onEnter }: ThreeDIntroProps) => {
             {/* 3D Scene */}
             <div className="absolute inset-0 z-0">
                 <Canvas>
-                    <PerspectiveCamera makeDefault position={[0, 0, 6]} />
+                    <PerspectiveCamera makeDefault position={[0, 0, 8]} />
                     <ambientLight intensity={0.2} />
                     {/* Dramatic rim lighting */}
                     <pointLight position={[10, 10, 10]} intensity={1.5} color="#fff" />
