@@ -30,15 +30,6 @@ const founders = [
     skills: ['Strategy', 'Applied AI', 'R&D'],
     bio: 'Drives strategy, execution, and applied innovation. Led projects including vape detection systems, piezoelectric energy research, and applied AI tools. Focused on solving real institutional and operational problems.',
   },
-  {
-    name: 'Tanush Yadav',
-    role: 'Co-founder',
-    focus: 'Strategy & Operations',
-    initial: 'TY',
-    image: '',
-    skills: ['Strategy', 'Applied AI', 'R&D'],
-    bio: 'Drives strategy, execution, and applied innovation. Focused on operational efficiency, strategic partnerships, and scaling institutional solutions.',
-  },
 ];
 
 const FounderCard = ({ founder, index }: { founder: typeof founders[0], index: number }) => {
@@ -145,14 +136,14 @@ const FoundersSection = () => {
               for engineers.
             </h2>
             <p className="text-body">
-              Four founders with a shared obsession: building things that
+              Three founders with a shared obsession: building things that
               actually work.
             </p>
           </RevealOnScroll>
         </div>
 
         {/* Founders grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 justify-center">
           {founders.map((founder, index) => (
             <RevealOnScroll key={founder.name} delay={index * 100} className="h-full">
               <FounderCard founder={founder} index={index} />
